@@ -11,7 +11,7 @@ image:
   tag: replace
   pullPolicy: IfNotPresent
   port: 7070
-  redisaddr: "redis-cart:6379"
+  redisAddr: "redis-cart:6379"
 
 nameOverride: ""
 fullnameOverride: ""
