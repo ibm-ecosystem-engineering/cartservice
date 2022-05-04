@@ -23,6 +23,9 @@ service:
   type: ClusterIP
   port: 7070
 
+submariner:
+  enabled: true
+
 route:
   enabled: false
 
