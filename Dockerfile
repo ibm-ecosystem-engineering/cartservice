@@ -24,9 +24,9 @@ RUN dotnet publish cartservice.csproj -p:PublishSingleFile=true -r linux-musl-x6
 # https://mcr.microsoft.com/v2/dotnet/runtime-deps/tags/list
 # FROM registry.access.redhat.com/ubi8/dotnet-50:5.0-34
 FROM mcr.microsoft.com/dotnet/runtime-deps:6.0.2-alpine3.14-amd64
-RUN GRPC_HEALTH_PROBE_VERSION=v0.4.6 && \
-    wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 && \
-    chmod +x /bin/grpc_health_probe
+#RUN GRPC_HEALTH_PROBE_VERSION=v0.4.6 && \
+#    wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 && \
+#    chmod +x /bin/grpc_health_probe
 WORKDIR /app
 COPY --from=builder /cartservice .
 ENV ASPNETCORE_URLS http://*:7070
