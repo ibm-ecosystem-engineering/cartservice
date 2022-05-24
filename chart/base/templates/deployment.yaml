@@ -125,6 +125,7 @@ spec:
     metadata:
       labels:
         app: redis-cart
+        app.kubernetes.io/part-of: {{ .Values.partOf }}
     spec:
       containers:
       - name: redis
