@@ -117,6 +117,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  labels:
+    app.kubernetes.io/part-of: {{ .Values.partOf }}
 spec:
   selector:
     matchLabels:
@@ -125,7 +127,6 @@ spec:
     metadata:
       labels:
         app: redis-cart
-        app.kubernetes.io/part-of: {{ .Values.partOf }}
     spec:
       containers:
       - name: redis
