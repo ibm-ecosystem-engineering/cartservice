@@ -24,7 +24,7 @@ service:
   port: 7070
 
 submariner:
-  enabled: true
+  enabled: false
 
 route:
   enabled: false
